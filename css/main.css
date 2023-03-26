@@ -1,0 +1,160 @@
+body {
+    overflow: auto;
+}
+
+.full_height {
+    height: calc(100vh - 56px);
+    overflow: auto;
+}
+
+p {
+    margin: 0px;
+}
+
+.main_sec_back {
+    background-color: rgba(17, 17, 17, 0.3);
+}
+
+.row_back {
+    border-bottom: 1px solid rgb(73, 80, 87);
+    border-left: 1px solid rgb(73, 80, 87);
+    border-right: 1px solid rgb(73, 80, 87);
+    cursor: pointer;
+}
+
+.row_back:nth-child(even) {
+    background-color: rgba(28, 31, 34, 1);
+}
+
+.row_back:nth-child(odd) {
+    background-color: rgba(33, 37, 41, 1);
+}
+
+.row_back:hover:not(.title_row) {
+    background-color: rgba(43, 48, 53, 1);
+}
+
+.row_header_title {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+#endpoints_tab_content, #keys_tab_content {
+    height: 72vh;
+    overflow: auto;
+}
+
+.btn_main {
+    background-color: rgba(28, 31, 34, 1);
+}
+
+.btn_main:hover {
+    background-color: rgba(24, 27, 30, 1);
+}
+
+.endpoint_disabled, .key_disabled {
+    background-color: rgba(134, 49, 49, 0.2)!important;
+}
+
+.hider {
+    display: none;
+}
+
+.cell_text {
+    position: relative;
+    max-width: 75%;
+    display: inline-block;
+}
+
+.modal-body {
+    max-height: 450px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgb(43, 43, 43);
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+	background-color: rgb(43, 43, 43);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(24, 27, 30, 1);
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #8BB9FE;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button_loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+    display: inline-block;
+}
+.button_loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0);
+    }
+    25% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0);
+    }
+    50% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%);
+    }
+    75% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%);
+    }
+    100% {
+        clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0);
+    }
+}
